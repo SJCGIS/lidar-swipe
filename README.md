@@ -2,7 +2,7 @@
 
 LiDAR is an imagery method to create representations of Earth's surface. The LiDAR Swipe map is designed for users to view a bare earth hillshade image created from LiDAR data in San Juan County, WA. In this case, you can drag the swipe bar across the map to compare the 2013 aerial photos with the 2013 LiDAR hillshade.
 
-[View it live](http://sjcgis.github.io/lidar-swipe]
+[View it live](http://sjcgis.github.io/lidar-swipe)
 
 ![App Screenshot](https://raw.githubusercontent.com/sjcgis/lidar-swipe/master/lidar-swipe.gif)
 
@@ -17,7 +17,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 - [ ] Flat, grey buffer on hillshade around shorelines. Hillshades are not applicable over water, so this is a no data zone.
 
 ## Thanks
-Special thanks to Tom Wayson, Allan Lafromboise, Ben Stoltz, and Arnaud Ferrand for their work on [dojo-bootstrap-map-js](https://github.com/Esri/dojo-bootstrap-map-js) from which this application is derived.
+Special thanks to [Tom Wayson](https://github.com/tomwayson), [Allan Lafromboise](https://github.com/alaframboise), [Ben Stoltz](https://github.com/benstoltz), and [Arnaud Ferrand](https://github.com/tsamaya) for their work on [dojo-bootstrap-map-js](https://github.com/Esri/dojo-bootstrap-map-js) from which this application is derived.
 
 ## Licensing
 Copyright 2015 San Juan County GIS

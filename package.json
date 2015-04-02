@@ -1,6 +1,6 @@
 {
     "name": "lidar-swipe",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "The LiDAR Swipe map is designed for users to view a bare earth hillshade image created from LiDAR data in San Juan County, WA",
     "main": "gruntfile.js",
     "directories": {

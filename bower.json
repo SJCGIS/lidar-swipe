@@ -1,15 +1,16 @@
 {
-  "name": "dojo-bootstrap-map-js",
-  "version": "3.2.2",
-  "homepage": "https://github.com/Esri/dojo-bootstrap-map-js",
+  "name": "lidar-swipe",
+  "version": "0.1.1",
+  "homepage": "https://github.com/sjcgis/lidar-swipe",
   "authors": [
-    "Tom Wayson <twayson@esri.com>"
+      "Nick Peihl <nickp@sanjuanco.com>"
   ],
   "main": "src/index.html",
   "keywords": [
     "Esi",
     "Dojo",
-    "Bootstrap"
+      "Bootstrap",
+      "LiDAR"
   ],
   "license": "Apache",
   "private": true,
