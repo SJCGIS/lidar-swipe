@@ -1,4 +1,6 @@
-define(['esri/InfoTemplate'], function(InfoTemplate) {
+define(['esri/InfoTemplate',
+        'esri/geometry/Point',
+        'esri/SpatialReference'], function(InfoTemplate, Point, SpatialReference) {
   return {
 
     portalUrl: 'http://www.arcgis.com',
@@ -11,7 +13,7 @@ define(['esri/InfoTemplate'], function(InfoTemplate) {
       // example web maps:
       // Portland Bike Map example from Boostrap Map demo pages, see
       // http://esri.github.io/bootstrap-map-js/demo/dojo/webmap.html
-      itemId: '8e42e164d4174da09f61fe0d3f206641',
+      // itemId: '8e42e164d4174da09f61fe0d3f206641',
 
       // SoCal running trails
       // GPX tracks embeded in web map as feature collections
@@ -33,12 +35,12 @@ define(['esri/InfoTemplate'], function(InfoTemplate) {
 
       // NOTE: this is the options sent to arcgisUtils.createMap()
       // see: https://developers.arcgis.com/javascript/jsapi/esri.arcgis.utils-amd.html#createmap
-      options: {
-        mapOptions: {
-          basemap: 'topo',
-          sliderPosition: 'bottom-right'
-        }
-      },
+      // options: {
+      //   mapOptions: {
+      //     basemap: 'topo',
+      //     sliderPosition: 'bottom-right'
+      //   }
+      // },
 
       // **********************************************
       // Example configuration when NOT using a webmap
@@ -47,42 +49,32 @@ define(['esri/InfoTemplate'], function(InfoTemplate) {
 
       // NOTE: this is the options sent to new Map()
       // see: https://developers.arcgis.com/javascript/jsapi/map-amd.html#map1
-      // options: {
-      //   basemap: 'gray',
-      //   center: [-122.4167, 37.7833],
-      //   zoom: 14,
-      //   sliderPosition: 'bottom-right'
-      // },
+      options: {
+        sliderPosition: 'bottom-right',
+        maxScale: 4800,
+        center: new Point(1126892, 580329, new SpatialReference({'wkid': 102748}))
+      },
 
-      // operationalLayers: [{
-      //   type: 'feature',
-      //   url: 'http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Earthquakes/Since_1970/MapServer/0',
-      //   title: 'Earthquakes around the world',
-      //   options: {
-      //     id: 'earthquake',
-      //     opacity: 1.0,
-      //     visible: true,
-      //     outFields: ['*'],
-      //     infoTemplate: new InfoTemplate('Earthquake', '${*}'),
-      //     mode: 0
-      //   }
-      // }, {
-      //   type: 'dynamic',
-      //   url: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/SF311/MapServer',
-      //   title: 'SF 311',
-      //   options: {
-      //     id: 'sf311',
-      //     opacity: 0.5,
-      //     visible: true
-      //   }
-      // }],
+      operationalLayers: [{
+        type: 'tiled',
+        url: 'http://sjcgis.org/arcgis/rest/services/Elevation/LiDAR_DEM_2013_Hillshade/ImageServer',
+        title: 'lidar',
+        options: {
+          id: 'lidar',
+          visible: true
+        }
+      }, {
+        type: 'tiled',
+        url: 'http://sjcgis.org/arcgis/rest/services/Basemaps/Aerial_Basemap/MapServer',
+        title: 'aerial',
+        options: {
+          id: 'aerial',
+          visible: true
+        }
+      }],
 
       // TODO: add basemaps
       // basemaps: {},
-
-      // set the id of a node to place the legend
-      // comment this out if you don't want to show legend
-      legendNodeId: 'mapLegend',
 
       // Add config parameters for each map widget you want to include
       // The map reference will get appended to the options
@@ -101,17 +93,25 @@ define(['esri/InfoTemplate'], function(InfoTemplate) {
         geocoder: {
           // see https://developers.arcgis.com/javascript/jsapi/geocoder-amd.html#geocoder1
           autoComplete: true,
-          arcgisGeocoder: {
-            placeholder: 'Address or Location'
-          },
+          arcgisGeocoder: false,
+          highlightLocation: true,
+          zoomScale: 1200,
+          geocoders: [{
+            url: 'http://sjcgis.org/arcgis/rest/services/Tools/Polaris_Geolocator/GeocodeServer',
+            name: 'SJC Geocoder',
+            singleLineFieldName: 'SingleLine'
+          }],
           'class': 'geocoder'
+        },
+        layerSwipe: {
+          layerIds: ['lidar']
         }
       }
     },
 
     // about modal
     aboutModal: {
-      moreInfoUrl: 'https://github.com/Esri/dojo-bootstrap-map-js'
+      moreInfoUrl: 'http://en.wikipedia.org/wiki/Lidar'
     }
   };
 });

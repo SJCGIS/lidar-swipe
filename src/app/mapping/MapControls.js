@@ -16,18 +16,14 @@ define([
   'esri/dijit/Geocoder',
   'esri/arcgis/utils',
   'esri/dijit/Legend',
+  'esri/dijit/LayerSwipe',
 
   'bootstrap-map-js/js/bootstrapmap',
 
   'spin-js/spin',
 
   'dojo/text!./templates/Map.html'
-], function(
-  declare, array, lang, domClass, topic,
-  _WidgetBase, _TemplatedMixin,
-  Map, Scalebar, WebTiledLayer, HomeButton, LocateButton, Geocoder, arcgisUtils, Legend,
-  BootstrapMap, Spinner,
-  template) {
+], function(declare, array, lang, domClass, topic, _WidgetBase, _TemplatedMixin, Map, Scalebar, WebTiledLayer, HomeButton, LocateButton, Geocoder, arcgisUtils, Legend, LayerSwipe, BootstrapMap, Spinner, template) {
   return declare([_WidgetBase, _TemplatedMixin], {
     templateString: template,
 
@@ -81,11 +77,11 @@ define([
 
     hideSpinner: function() {
         // summary:
-        // hides the spinner 
+        // hides the spinner
         //
         if( this.spinner ) {
           this.spinner.stop();
-        }        
+        }
     },
 
     // initalize map from configuration parameters
@@ -100,9 +96,8 @@ define([
         BootstrapMap.createWebMap(this.itemId, this.mapNode.id, this.options).then(lang.hitch(this, '_onWebMapLoad'));
       } else {
         this.map = BootstrapMap.create(this.mapNode.id, this.options);
-        this._wireEvents();        
+        this._wireEvents();
         this._initLayers();
-        this._initWidgets();
       }
     },
 
@@ -136,7 +131,8 @@ define([
       var layerTypes = {
         dynamic: 'ArcGISDynamicMapService',
         feature: 'Feature',
-        tiled: 'ArcGISTiledMapService'
+        tiled: 'ArcGISTiledMapService',
+        image: 'ArcGISImageService'
       };
       // loading all the required modules first ensures the layer order is maintained
       var modules = [];
@@ -158,6 +154,7 @@ define([
         }, this);
         this.map.addLayers(layers);
         this._initLegend(layerInfos);
+        this._initWidgets();
       }));
     },
 
@@ -225,6 +222,21 @@ define([
           domClass.remove(self.geocoder.domNode, 'shown');
         }));
       }
+
+      // layer swipe
+      if (this.widgets.layerSwipe) {
+        var layers = [];
+        array.forEach(this.widgets.layerSwipe.layerIds, lang.hitch(this, function(lid){
+          var layer = this.map.getLayer(lid);
+          layers.push(layer);
+        }));
+        console.log(layers);
+        this.layerSwipe = new LayerSwipe(lang.mixin({
+          map: this.map,
+          layers: layers
+        }, this.widgets.layerSwipe), this.layerSwipeNode);
+      }
+      this.layerSwipe.startup();
     },
 
     getMapHeight: function() {

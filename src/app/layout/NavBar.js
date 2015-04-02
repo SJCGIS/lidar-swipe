@@ -36,19 +36,6 @@ define([
 
       _attachEventHandlers: function() {
         var self = this;
-        // toggle sidebar
-        this.own(on(this.sidebarToggleButton, 'click', function(e) {
-          topic.publish('sidebar/toggle');
-          self._hideDropdownNav(e);
-        }));
-        // change basemap
-        query('.basemap-list li', this.domNode).on('click', function(e) {
-          e.preventDefault();
-          topic.publish('basemap/set', {
-            basemap: e.target.text
-          });
-          self._hideDropdownNav(e);
-        });
         // show about modal
         query('a[href="#about"]', this.domNode).on('click', function(e) {
           e.preventDefault();

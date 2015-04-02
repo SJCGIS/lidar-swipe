@@ -14,7 +14,7 @@ body {
 }
 
 .navbar-toggle .glyphicon {
-  color: #fff;
+  color: #999;
   font-size: 14px;
 }
 
@@ -32,7 +32,7 @@ body {
 /* map widgets */
 .HomeButton {
   position: absolute;
-  top: 15px;
+  top: 30px;
   left: 15px;
   z-index: 30;
   margin: 2px 0; /*needed to line up w/ geocoder */
@@ -40,7 +40,7 @@ body {
 
 .locate-button {
   position: absolute;
-  top: 15px;
+  top: 30px;
   left: 55px;
   z-index: 30;
   margin: 2px 0; /*needed to line up w/ geocoder */
@@ -50,7 +50,7 @@ body {
   display: block;
   position: absolute;
   z-index: 30;
-  top: 15px;
+  top: 30px;
   right: 15px;
 }
 

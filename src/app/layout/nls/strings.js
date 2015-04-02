@@ -1,11 +1,11 @@
 define({
   root: ({
-    appTitle: 'Dojo Bootstrap Map',
+    appTitle: 'LiDAR Swipe',
     navBasemaps: 'Basemaps',
     navAbout: 'About',
     modalAboutTitle: 'About',
-    modalAboutContent: 'The goal of this application boilerplate is to demonstrate how to build a mapping application that utilizes the best parts of Dojo (AMD modules, classes and widgets, promises, i18n, routing, etc) along with the responsive UI of Bootstrap.',
-    modalAboutMoreInfo: 'More...'
+    modalAboutContent: 'LiDAR is an imagery method to create representations of Earth\'s surface. The LiDAR Swipe map is designed for users to view a bare earth hillshade image created from LiDAR data. In this case, you can drag the swipe bar across the map to compare the 2013 aerial photos with the 2013 LiDAR hillshade.',
+    modalAboutMoreInfo: 'Wikipedia:LiDAR'
   }),
   fr: true,
   es: true,
