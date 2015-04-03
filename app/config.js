@@ -51,7 +51,7 @@ define(['esri/InfoTemplate',
       // see: https://developers.arcgis.com/javascript/jsapi/map-amd.html#map1
       options: {
         sliderPosition: 'bottom-right',
-        maxScale: 4800,
+        maxScale: 1200,
         center: new Point(1126892, 580329, new SpatialReference({'wkid': 102748}))
       },
 
