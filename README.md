@@ -8,7 +8,7 @@ LiDAR is an imagery method to create representations of Earth's surface. The LiD
 
 ## Issues
 
-Find a bug or want to request a new feature?  Please let us know by submitting an issue.
+Find a bug or want to request a new feature?  Please let us know by [submitting an issue](https://github.com/SJCGIS/lidar-swipe/issues/new).
 
 ## Thanks
 Special thanks to [Tom Wayson](https://github.com/tomwayson), [Allan Lafromboise](https://github.com/alaframboise), [Ben Stoltz](https://github.com/benstoltz), and [Arnaud Ferrand](https://github.com/tsamaya) for their work on [dojo-bootstrap-map-js](https://github.com/Esri/dojo-bootstrap-map-js) from which this application is derived.
