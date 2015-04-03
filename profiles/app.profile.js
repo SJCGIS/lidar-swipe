@@ -43,8 +43,9 @@ var profile = {
     'dojox',
     'esri',
     'put-selector',
-    'xstyle', 
-    'dojo-bootstrap', 
+    'xstyle',
+    'dojo-bootstrap',
+    'bootswatch',
     {
       name: 'spin-js',
       location: 'spinjs',

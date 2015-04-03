@@ -1,67 +1,68 @@
 {
-    "name": "lidar-swipe",
-    "version": "0.2.0",
-    "description": "The LiDAR Swipe map is designed for users to view a bare earth hillshade image created from LiDAR data in San Juan County, WA",
-    "main": "gruntfile.js",
-    "directories": {
-        "src": "src"
+  "name": "lidar-swipe",
+  "version": "0.2.0",
+  "description": "The LiDAR Swipe map is designed for users to view a bare earth hillshade image created from LiDAR data in San Juan County, WA",
+  "main": "gruntfile.js",
+  "directories": {
+    "src": "src"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sjcgis/lidar-swipe.git"
+  },
+  "keywords": [
+    "esri",
+    "maps",
+    "dojo",
+    "bootstrap",
+    "lidar"
+  ],
+  "author": {
+    "name": "Nick Peihl",
+    "homepage": "https://github.com/npeihl"
+  },
+  "contributors": [
+    {
+      "name": "Tom Wayson",
+      "homepage": "https://github.com/tomwayson"
     },
-    "scripts": {
-        "test": "grunt test"
+    {
+      "name": "Allan Laframboise",
+      "homepage": "https://github.com/alaframboise"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/sjcgis/lidar-swipe.git"
+    {
+      "name": "Ben Stoltz",
+      "homepage": "https://github.com/benstoltz"
     },
-    "keywords": [
-        "esri",
-        "maps",
-        "dojo",
-        "bootstrap",
-        "lidar"
-    ],
-    "author": {
-        "name": "Nick Peihl",
-        "homepage": "https://github.com/npeihl"
-    },
-    "contributors": [
-        {
-            "name": "Tom Wayson",
-            "homepage": "https://github.com/tomwayson"
-        },
-        {
-            "name": "Allan Laframboise",
-            "homepage": "https://github.com/alaframboise"
-        },
-        {
-            "name": "Ben Stoltz",
-            "homepage": "https://github.com/benstoltz"
-        },
-        {
-            "name": "Arnaud Ferrand",
-            "homepage": "https://github.com/tsamaya"
-        }
-    ],
-    "license": "Apache",
-    "bugs": {
-        "url": "https://github.com/sjcgis/lidar-swipe/issues"
-    },
-    "homepage": "https://github.com/sjcgis/lidar-swipe",
-    "devDependencies": {
-        "connect-livereload": "~0.3.2",
-        "grunt": "~0.4.2",
-        "grunt-build-gh-pages": "^1.0.3",
-        "grunt-contrib-clean": "^0.6.0",
-        "grunt-contrib-connect": "~0.7.1",
-        "grunt-contrib-jshint": "^0.10.0",
-        "grunt-contrib-watch": "~0.5.3",
-        "grunt-dojo": "^1.0.1",
-        "grunt-esri-slurp": "^1.4.3",
-        "grunt-gh-pages": "^0.9.1",
-        "grunt-open": "~0.2.3",
-        "grunt-processhtml": "^0.3.7"
-    },
-    "engines": {
-        "node": ">=0.8.0"
+    {
+      "name": "Arnaud Ferrand",
+      "homepage": "https://github.com/tsamaya"
     }
+  ],
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/sjcgis/lidar-swipe/issues"
+  },
+  "homepage": "https://github.com/sjcgis/lidar-swipe",
+  "devDependencies": {
+    "connect-livereload": "~0.3.2",
+    "grunt": "~0.4.2",
+    "grunt-build-gh-pages": "^1.0.3",
+    "grunt-bump": "^0.3.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-connect": "~0.7.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-dojo": "^1.0.1",
+    "grunt-esri-slurp": "^1.4.3",
+    "grunt-gh-pages": "^0.9.1",
+    "grunt-open": "~0.2.3",
+    "grunt-processhtml": "^0.3.7"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
 }

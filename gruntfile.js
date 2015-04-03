@@ -36,6 +36,19 @@ module.exports = function(grunt) {
       }
     },
 
+    bump: {
+      options: {
+        files: ['package.json', 'bower.json'],
+        commit: true,
+        commitFiles: ['package.json', 'bower.json'],
+        commitMessage: 'Release v%VERSION%',
+        createTag: true,
+        tagName: 'v%VERSION%',
+        tagMessage: 'Version %VERSION%',
+        push: false
+      }
+    },
+
     //Open default browser at the app
     open: {
       cdn: {
@@ -133,6 +146,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-dojo');
   grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks('grunt-bump');
 
   grunt.registerTask('default', ['serve']);
 
