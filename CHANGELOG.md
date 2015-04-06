@@ -1,7 +1,11 @@
 # Change Log
 All notable changes to lidar-swipe will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org).
 
-## 0.3 - 2015-04-03
+## 0.3.1
+### Fixed
+- Enabled zooming via the mouse scroll wheel
+
+## 0.3.0 - 2015-04-03
 ### Added
 - Added CHANGELOG.md
 - Added bootswatch to dependencies
