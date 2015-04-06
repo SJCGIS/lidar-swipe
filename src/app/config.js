@@ -52,7 +52,8 @@ define(['esri/InfoTemplate',
       options: {
         sliderPosition: 'bottom-right',
         maxScale: 1200,
-        center: new Point(1126892, 580329, new SpatialReference({'wkid': 102748}))
+        center: new Point(1126892, 580329, new SpatialReference({'wkid': 102748})),
+        scrollWheelZoom: true
       },
 
       operationalLayers: [{
